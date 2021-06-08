@@ -1,0 +1,9 @@
+.fieldSeparation {
+    padding-left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .fieldSeparation {
+        padding-left: 0px;
+    }
+}

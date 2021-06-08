@@ -1,0 +1,61 @@
+.container 
+{
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+  }
+  
+.form 
+{
+  display: flex;
+  padding-top: 6px;
+}
+  
+.mat-dialog-content 
+{
+  overflow: hidden;
+}
+  
+.mat-form-field 
+{
+    width: 100%;
+    font-size: 16px;
+    flex-grow: 1;
+}
+  
+.actionButtons 
+{
+    display: block;
+    margin-bottom: -8px;
+}
+
+.actionButton
+{
+  background-color: lightpink;
+  color: black;
+  width: 40%;
+}
+
+.newsletterSignupText
+{
+    text-align: center;
+}
+  
+.material-icons.color_white {color: #ffffff;}
+
+.close-button
+{
+  float: right;
+  top:-24px;
+  right:-24px;
+}
+
+.close-icon 
+{
+  transition: 1s ease-in-out;
+}
+
+.close-icon:hover 
+{
+  transform: rotate(180deg);
+}

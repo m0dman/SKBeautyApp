@@ -1,0 +1,20 @@
+.mat-list-item {
+    color: #000000;
+  }
+  
+  .mat-list-item.active {
+    background-color: #ff9eab;
+  }
+  
+  .mat-list-item:hover:not(.active) {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .customIcons {
+    padding-right: 10px;
+  }
+  
+  .mat-list-item.active:not(.active) {
+    background-color: #ff9eab;
+  }
+  

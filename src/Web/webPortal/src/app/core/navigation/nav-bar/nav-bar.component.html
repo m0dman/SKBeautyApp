@@ -1,0 +1,35 @@
+<mat-toolbar class="topbar" color="primary">
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon class="navBurger">dehaze</mat-icon>
+  </button>
+  <h2 id="pageTitle" class="pageTitle">{{ pageTitle }}</h2>
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item href="">Edit Profile</button>
+    <button mat-menu-item href="">Logout</button>
+  </mat-menu>
+
+  <!-- Handles spacing for account and alert controls -->
+  <span class="iconSpacer"></span>
+
+  <div id="navEnd">
+    <mat-icon class="navEndButtons" matTooltip="Account Controls" [matMenuTriggerFor]="appMenu">account_box</mat-icon>
+  </div>
+</mat-toolbar>
+  
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav" #drawer [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+  [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <img src="./../../../../assets/images/logo.webp" class="logo" />
+    <mat-nav-list>
+      <mat-divider></mat-divider>
+      <app-page-link id="homeNavLink" class="sidenav-option" pageName="Home" pageLink="/dashboard" pageIcon="home"></app-page-link>
+      <app-page-link id="treatmentNavLink" class="sidenav-option" pageName="Treatments" pageLink="/treatment" pageIcon="shopping_cart"></app-page-link>
+      <app-page-link id="bookingNavLink" class="sidenav-option" pageName="Bookings" pageLink="/booking" pageIcon="book"></app-page-link>
+      <app-page-link id="referenceSearchNavLink" class="sidenav-option" pageName="Reference Search" pageLink="/reference" pageIcon="search"></app-page-link>
+      <app-page-link id="contactNavLink" class="sidenav-option" pageName="Contact Us" pageLink="/contact" pageIcon="contact_mail"></app-page-link>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

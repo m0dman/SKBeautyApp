@@ -1,0 +1,44 @@
+.homeTitle 
+{
+    text-align: center;
+}
+
+.homeSlider
+{
+    width: 100%; 
+    height: 20%; 
+    text-align:center; 
+    margin:0; 
+    padding:0;
+}
+
+.homeText
+{
+    margin-top: 13%; 
+    width: 33%; 
+    margin-left: 10%; 
+    float: left;
+}
+
+.homeText2
+{
+    width: 33%; 
+    float: right; 
+    margin-top: 13%;
+    margin-right: 10%;
+}
+
+.newsletterButton
+{
+    background-color: lightpink; 
+    color: black;
+    margin-top: 25%;
+    width: 14%;
+    height: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+    .homeSlider {
+        display: none;
+    }
+}

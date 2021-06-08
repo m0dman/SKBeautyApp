@@ -1,0 +1,23 @@
+.card {
+    width: 100%;
+    height: 75%;
+  }
+  
+  .mat-card-content {
+    margin-top: 20px;
+    height: 575px;
+  }
+
+  .mapCard {
+      width: 100%;
+    }
+
+  @media only screen and (max-width: 600px) {
+    .aboutUsCard {
+      padding-bottom: 225px;
+    }
+    .contactUsCard {
+      padding-bottom: 225px;
+      height: 30%;
+    }
+  }

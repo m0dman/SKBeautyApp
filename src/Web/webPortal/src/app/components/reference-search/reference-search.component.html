@@ -1,0 +1,37 @@
+<form [formGroup]="searchFormGroup">
+    <mat-form-field class="referenceField">
+        <mat-label>Reference Number</mat-label>
+        <input matInput placeholder="Reference Number" formControlName="reference" required>
+      </mat-form-field>
+
+      <button mat-raised-button (click)="search()">Search</button>
+</form>
+
+<mat-card *ngIf="showCard == true">
+    <mat-card-title>
+      Your Booking
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <h3>First Name</h3>
+        <p>{{ booking.firstName }}</p>
+        <h3>Surname</h3>
+        <p>{{ booking.surname }}</p>
+        <h3>Address</h3>    
+        <p>{{ booking.address }}</p>
+        <h3>Email</h3>    
+        <p>{{ booking.email }}</p>
+        <h3>Tehephone Number</h3>    
+        <p>{{ booking.telephoneNumber }}</p>
+        <h3>Phone Number</h3>    
+        <p>{{ booking.phoneNumber }}</p>
+        <h3>Date of Appointment</h3>    
+        <p>{{ booking.date }}</p>
+        <h3>Treatment</h3>    
+        <p>{{ booking.treatment.name }}</p>
+        <h3>Price</h3>    
+        <p>{{ booking.treatment.price }}</p>
+        <h3>Branch</h3>    
+        <p>{{ booking.branch.name }}</p>
+    </mat-card-content>
+  </mat-card>

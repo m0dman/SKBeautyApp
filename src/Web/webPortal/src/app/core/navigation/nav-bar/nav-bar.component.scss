@@ -1,0 +1,92 @@
+$sideNavColor: linear-gradient(
+  to top,
+  #3d3d3d,
+  #494545,
+  #564d4e,
+  #635557,
+  #7e6669,
+  #8b6e72,
+  #99777c,
+  #a78085,
+  #b5898f,
+  #c49199,
+  #d29aa3,
+  #ffb6c1
+);
+$fontColor: #000000;
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: $fontColor;
+}
+
+.logo {
+  width: 97%;
+  padding-left: 2%;
+}
+
+.sidenav-container {
+  position: absolute;
+  top: 56px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+}
+
+.sidenav {
+  display: flex;
+  padding-top: 20px;
+  width: 160px;
+  background: $sideNavColor;
+  overflow: hidden;
+  border: none;
+}
+
+.mat-sidenav-content {
+  padding-top: 20px;
+  padding-left: 2%;
+  padding-right: 2%;
+  height: calc(100% - 20px);
+}
+
+.iconSpacer {
+  flex: 1 1 auto;
+}
+
+.navBurger {
+  font-size: 40px;
+}
+
+// For right had nav controls - add button spacing
+.navEndButtons {
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+// Controlling width to better control right had spacing on nav-bar
+.mat-icon-button {
+  width: auto;
+}
+
+.mat-toolbar-row {
+  padding: 0 10px;
+}
+
+::ng-deep.mat-menu-panel.notificationsmenu {
+  max-width: 490px !important;
+  max-height: calc(100vh - 40px);
+  overflow: hidden;
+}
+
+.pageTitle {
+  margin-left: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+  .pageTitle {
+    margin-left: 5%;
+  }
+}

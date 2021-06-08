@@ -1,0 +1,29 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+<div class="container newsletterSignupText">
+    <h1 mat-dialog-title>Welcome</h1>
+    
+    <p>Sign up to our mailing list to get 15% off your first order!</p>
+
+    <form class="mat-dialog-content" [formGroup]="form" autocomplete="off">
+
+      <mat-form-field color="accent">
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          placeholder="Email Address"
+          name="email"
+          autocomplete="off"
+          formControlName="email"
+          pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+        />
+      </mat-form-field>
+  
+      <div mat-dialog-actions class="actionButtons">
+        <button mat-raised-button [disabled]="!form.valid" (click)="subscribe()" class="actionButton">Subscribe</button>
+      </div>
+    </form>
+</div>
+  

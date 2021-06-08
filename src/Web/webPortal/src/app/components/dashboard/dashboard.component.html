@@ -1,0 +1,18 @@
+
+<h1 class="mat-display-3 homeTitle">Welcome to SK Beauty</h1>
+
+<div class="homeSlider">
+    <ng-image-slider [images]="imageObject" [infinite]="true" [autoSlide]="5"
+      [imageSize]="{width: '25%', height: 350}" slideImage="1">
+    </ng-image-slider>
+</div>
+
+<div class="homeText">
+    <p class="mat-subheading-1" >We have been providing professional beauty treatments in Belfast since opening 20 years ago, our focus on personal attention and our extensive range of beauty therapies have been designed to enhance your well-being and self-confidence.</p>
+</div>
+
+<div class="homeText2">
+    <p class="mat-subheading-1" >Over the years we have built up an enviable reputation for providing tailored beauty treatments and packages, ensuring we meet your individual needs and requirements for all occasions.</p>
+</div>
+
+<button mat-raised-button class="newsletterButton" (click)="newsletterSignup()">Sign up To Our Newletter</button>

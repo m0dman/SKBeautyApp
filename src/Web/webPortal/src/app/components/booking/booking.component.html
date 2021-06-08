@@ -1,0 +1,101 @@
+<h1>Book an Appointment</h1>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="detailsFormGroup">
+      <form [formGroup]="detailsFormGroup">
+        <ng-template matStepLabel>Fill out your details</ng-template>
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First name" formControlName="firstName" required>
+        </mat-form-field>
+        <mat-form-field class="fieldSeparation">
+            <mat-label>Surname</mat-label>
+            <input matInput placeholder="Surname" formControlName="surname" required>
+        </mat-form-field>
+        <mat-form-field class="fieldSeparation">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Phone Number" formControlName="phoneNumber" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" required>
+        </mat-form-field>
+        <mat-form-field class="fieldSeparation">
+          <mat-label>Telephone Number</mat-label>
+          <input matInput placeholder="Telephone Number" formControlName="telephoneNumber" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" required>
+        </mat-form-field>
+        <mat-form-field class="fieldSeparation">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field class="fieldSeparation">
+          <mat-label>Address</mat-label>
+          <input matInput placeholder="Address" formControlName="address" required>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="branchFormGroup">
+      <form [formGroup]="branchFormGroup">
+        <ng-template matStepLabel>Select your branch</ng-template>
+        <mat-form-field [formGroup]="branchFormGroup">
+          <mat-label>Branch</mat-label>
+          <mat-select [(ngModel)]="selectedBranch" name="branch" formControlName="branch">
+            <mat-option *ngFor="let branch of branches" [value]=branch>
+              {{branch.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext (click)="getTreatments()">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="treatmentFormGroup">
+        <form [formGroup]="treatmentFormGroup">
+          <ng-template matStepLabel>Select your Treatment</ng-template>
+          <mat-form-field [formGroup]="treatmentFormGroup">
+            <mat-label>Treatment</mat-label>
+            <mat-select [(ngModel)]="selectedTreatment" name="treatment" formControlName="treatment">
+              <mat-option *ngFor="let treatment of treatments" [value]=treatment>
+                {{treatment.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+            <button mat-raised-button matStepperPrevious>Back</button>
+            <button mat-raised-button matStepperNext>Next</button>
+          </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="dateTimeFormGroup">
+        <ng-template matStepLabel>Select your Time & Date</ng-template>
+        <mat-form-field appearance="fill">
+          <input matInput [matDatepicker]="picker" (dateChange)="dateChangeEvent($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext (click)="setValues()">Next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Confirm Details</ng-template>
+      <p>First Name: {{ booking.firstName }}</p>
+      <p>Surname: {{ booking.surname }}</p>
+      <p>Phone Number: {{ booking.phoneNumber }}</p>
+      <p>Telephone Number: {{ booking.telephoneNumber }}</p>
+      <p>Email: {{ booking.email }}</p>
+      <p>Date: {{ booking.date }}</p>
+      <p>Address: {{ booking.address }}</p>
+      <p>Branch: {{ booking.branch.name }}</p>
+      <p>Treatment: {{ booking.treatment.name }}</p>
+      <p>Price: {{ booking.treatment.price }}</p>
+      <div>
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button (click)="bookAppointment()">Book</button>
+      </div>
+    </mat-step>
+
+  </mat-vertical-stepper>
